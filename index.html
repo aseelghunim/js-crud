@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course crud system</title>
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.2/sweetalert2.min.css" integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <main>
+        <h2 class="text-center text-uppercase text-bg-dark py-2">crud system</h2>
+        <div class="container ">
+            <div class="row mt-5 justify-content-between">
+                <div class="col-md-5  mb-3">
+                    <form action="">
+                        <div class="mb-3 position-relative">
+                            <label for="" class="form-label text-capitalize">name</label>
+                            <input type="text" class="form-control" id="name" placeholder="enter course name" required>
+                            <div class="invalid-feedback">
+                                Course name must be at least 3 characters<br/>First letter must be capital
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="cat" class="form-label">Category</label>
+                            <select class="form-select" id="cat" aria-label="Default select example">
+                                <option selected value="">Choose a category</option>
+                                <option value="Web">Web</option>
+                                <option value="Digital marketing">Digital marketing</option>
+                                <option value="Languages">Languages</option>
+                            </select>
+                            <div class="invalid-feedback ">
+                                Please choose a valid category.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="" class="form-label text-capitalize">price</label>
+                            <input type="number" class="form-control" id="price" placeholder="enter course price" required>
+                            <div class="invalid-feedback ">
+                                Price must be between $100 and $999.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" id="desc"
+                                placeholder="Enter course description" rows="3"></textarea>
+                        </div>
+                        <div class="btns">
+
+                            <button type="submit" id="add-btn" class="btn btn-primary" disabled>Add</button>
+                            <button type="button" id="clear-btn" class="btn btn-dark">Clear</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h3 class="text-primary">Search for course :</h3>
+                    <div class="input-group flex-nowrap my-3">
+                        <input type="text" id="search" class="form-control" placeholder="Start Typing to search...">
+                        <span class="input-group-text bg-transparent" id=""><i class="fa-solid fa-search"></i></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <h3 class="text-capitalize text-decoration-underline text-primary"> courses data</h3>
+                        <button id="delete-all" class="btn btn-danger btn-sm">deleteAll <i class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                    <table class="table table-striped mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">#</th>
+                                <th scope="col" class="text-center">Name</th>
+                                <th scope="col" class="text-center">category</th>
+                                <th scope="col" class="text-center">price</th>
+                                <th scope="col" class="text-center">desc</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- sweetalert -->
+    <!-- <script src="assets/external/sweetalert2@11.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.2/sweetalert2.all.min.js" integrity="sha512-SK3zv9THqmpMz5vgYjzMUplj1kKAkRC6j+xIC0XPcrGKntTmxhYQzgsysgwDq+WKG0CARR1YQKoqGsNlaNMvKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- main  -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
